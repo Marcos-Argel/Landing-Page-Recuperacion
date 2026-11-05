@@ -40,12 +40,12 @@ Abre la dirección que aparece en la terminal (por defecto http://localhost:5173
 
 Nadie sube directo a `main`: todo pasa por Pull Request y revisión.
 
-## Secciones del equipo Padilla
+## Equipo, FAQ y Contacto
 
 - **Equipo:** actualiza el arreglo `teamMembers` en `src/components/sections/Team.jsx`. Reemplaza `photo: null` por la ruta de cada fotografía (por ejemplo, `/team/nombre.jpg`) y coloca los archivos en `public/team/`; los avatares con iniciales se muestran mientras no haya fotos.
 - **Preguntas frecuentes:** edita el arreglo `questions` en `src/components/sections/FAQ.jsx`. El enlace de navegación `faq` se encuentra en `src/data/navLinks.js`.
-- **Contacto:** el formulario de `src/components/sections/Contact.jsx` valida los campos en el navegador, pero no envía ni almacena información. Para habilitar el envío, conecta `handleSubmit` a un endpoint propio o a un proveedor de formularios; maneja ahí las respuestas y errores del servicio antes de mostrar una confirmación de envío.
-- **WhatsApp:** configura `whatsappPhone` en `src/components/ui/WhatsAppButton.jsx` con el número del equipo en formato internacional, solo dígitos y sin `+` ni espacios. El botón permanece deshabilitado hasta que se indique un número.
+- **Contacto:** el formulario de `src/components/sections/Contact.jsx` valida los campos en el navegador; cuando hay número de WhatsApp en `src/data/siteConfig.js`, el mensaje se abre en WhatsApp listo para enviar.
+- **WhatsApp:** configura `whatsapp` en `src/data/siteConfig.js` con el número del equipo en formato internacional, solo dígitos y sin `+` ni espacios. El botón permanece deshabilitado hasta que se indique un número.
 
 ## Scripts
 
