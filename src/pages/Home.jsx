@@ -1,18 +1,17 @@
 import Navbar from '../components/layout/Navbar.jsx'
 import Footer from '../components/layout/Footer.jsx'
+import Hero from '../components/sections/Hero.jsx'
+import Services from '../components/sections/Services.jsx'
 import Portfolio from '../components/sections/Portfolio.jsx'
-import Process from '../components/sections/Process.jsx'
-import Pricing from '../components/sections/Pricing.jsx'
-import Testimonials from '../components/sections/Testimonials.jsx'
 import navLinks from '../data/navLinks.js'
 
 // Secciones terminadas: el id del menú (navLinks.js) -> su componente o componentes.
 // Para agregar la tuya: impórtala arriba y añade una línea aquí con tu id.
 // Las que no estén aquí se muestran como bloque temporal.
 const secciones = {
+  inicio: [Hero],
+  servicios: [Services],
   portafolio: [Portfolio],
-  proceso: [Process],
-  precios: [Pricing, Testimonials],
 }
 
 function Home() {
