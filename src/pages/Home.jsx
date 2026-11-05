@@ -6,6 +6,10 @@ import Portfolio from '../components/sections/Portfolio.jsx'
 import Process from '../components/sections/Process.jsx'
 import Pricing from '../components/sections/Pricing.jsx'
 import Testimonials from '../components/sections/Testimonials.jsx'
+import Team from '../components/sections/Team.jsx'
+import FAQ from '../components/sections/FAQ.jsx'
+import Contact from '../components/sections/Contact.jsx'
+import WhatsAppButton from '../components/ui/WhatsAppButton.jsx'
 import navLinks from '../data/navLinks.js'
 
 // Secciones terminadas: el id del menú (navLinks.js) -> su componente o componentes.
@@ -17,6 +21,9 @@ const secciones = {
   portafolio: [Portfolio],
   proceso: [Process],
   precios: [Pricing, Testimonials],
+  equipo: [Team],
+  faq: [FAQ],
+  contacto: [Contact],
 }
 
 function Home() {
@@ -42,6 +49,7 @@ function Home() {
         })}
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }
