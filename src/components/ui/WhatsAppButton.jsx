@@ -1,4 +1,8 @@
-const whatsappPhone = ''
+import siteConfig from '../../data/siteConfig.js'
+
+// El número se configura en src/data/siteConfig.js
+const whatsappPhone = siteConfig.whatsapp
+const whatsappText = encodeURIComponent(siteConfig.whatsappMessage)
 
 function WhatsAppButton() {
   const className =
@@ -26,7 +30,7 @@ function WhatsAppButton() {
 
   return (
     <a
-      href={`https://wa.me/${whatsappPhone}`}
+      href={`https://wa.me/${whatsappPhone}?text=${whatsappText}`}
       target="_blank"
       rel="noreferrer"
       aria-label="Contactar al equipo por WhatsApp (abre una nueva pestaña)"
