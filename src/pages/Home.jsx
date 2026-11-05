@@ -1,6 +1,8 @@
 import Navbar from '../components/layout/Navbar.jsx'
 import Footer from '../components/layout/Footer.jsx'
 import navLinks from '../data/navLinks.js'
+import Hero from "../components/sections/Hero";
+import Services from "../components/sections/Services";
 
 // Mientras el equipo termina sus secciones, cada una se muestra como un bloque temporal.
 // Cuando una sección real esté lista (components/sections/...), se reemplaza aquí.
@@ -18,6 +20,8 @@ function Home() {
             <h2 className="text-2xl font-bold">{link.label}</h2>
           </section>
         ))}
+        <Hero />
+      <Services />
       </main>
       <Footer />
     </>
