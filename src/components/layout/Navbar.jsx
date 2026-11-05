@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import navLinks from '../../data/navLinks.js'
+import siteConfig from '../../data/siteConfig.js'
 
 function Navbar() {
   // Controla si el menú del celular está abierto o cerrado
@@ -11,7 +12,7 @@ function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
         <a href="#inicio" className="text-xl font-bold text-primary">
-          Marca
+          {siteConfig.name}
         </a>
 
         {/* Enlaces para pantallas medianas y grandes */}
