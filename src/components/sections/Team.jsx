@@ -32,8 +32,8 @@ const teamMembers = [
   },
   {
     name: 'Marcos Argel',
-    role: 'Proceso y precios',
-    description: 'Está a cargo de las secciones de proceso, precios y testimonios.',
+    role: 'Líder del equipo',
+    description: 'Coordinó el equipo en Jira y GitHub y desarrolló proceso, precios y testimonios.',
     initials: 'MA',
     photo: null,
   },

@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import Button from '../ui/Button.jsx'
 import Card from '../ui/Card.jsx'
 import SectionTitle from '../ui/SectionTitle.jsx'
+import siteConfig from '../../data/siteConfig.js'
 
 const initialForm = {
   name: '',
@@ -40,9 +42,16 @@ function Contact() {
       return
     }
 
-    setStatusMessage(
-      'Los datos son válidos, pero no se enviaron: este formulario aún no está conectado a un servicio de contacto.',
-    )
+    // Si hay número de WhatsApp configurado, el mensaje se abre en WhatsApp listo para enviar
+    if (siteConfig.whatsapp) {
+      const text = `Hola, soy ${form.name.trim()} (${form.email.trim()}).\nAsunto: ${form.subject.trim()}\n${form.message.trim()}`
+      window.open(`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(text)}`, '_blank', 'noreferrer')
+      setStatusMessage('¡Gracias! Abrimos WhatsApp con tu mensaje para que lo envíes.')
+      setForm(initialForm)
+      return
+    }
+
+    setStatusMessage('¡Gracias! Tus datos están completos. Pronto habilitaremos el envío directo.')
   }
 
   const fieldClassName =
@@ -53,7 +62,7 @@ function Contact() {
       <div className="mx-auto max-w-3xl px-4">
         <SectionTitle
           title="Hablemos de tu proyecto"
-          subtitle="Cuéntanos qué tienes en mente. Los campos se validan en tu navegador; el envío requiere conectar un servicio."
+          subtitle="Cuéntanos qué tienes en mente y te respondemos lo antes posible."
         />
 
         <Card className="p-5 shadow-md sm:p-8">
@@ -61,7 +70,7 @@ function Contact() {
             <div className="grid gap-5 sm:grid-cols-2">
               <div className="sm:col-span-2">
                 <label htmlFor="contact-name" className="font-medium text-ink">
-                  Nombre completo <span aria-hidden="true" className="text-violet-700">*</span>
+                  Nombre completo <span aria-hidden="true" className="text-primary">*</span>
                 </label>
                 <input
                   id="contact-name"
@@ -84,7 +93,7 @@ function Contact() {
 
               <div className="sm:col-span-2">
                 <label htmlFor="contact-email" className="font-medium text-ink">
-                  Correo electrónico <span aria-hidden="true" className="text-violet-700">*</span>
+                  Correo electrónico <span aria-hidden="true" className="text-primary">*</span>
                 </label>
                 <input
                   id="contact-email"
@@ -107,7 +116,7 @@ function Contact() {
 
               <div className="sm:col-span-2">
                 <label htmlFor="contact-subject" className="font-medium text-ink">
-                  Asunto <span aria-hidden="true" className="text-violet-700">*</span>
+                  Asunto <span aria-hidden="true" className="text-primary">*</span>
                 </label>
                 <input
                   id="contact-subject"
@@ -129,7 +138,7 @@ function Contact() {
 
               <div className="sm:col-span-2">
                 <label htmlFor="contact-message" className="font-medium text-ink">
-                  Mensaje <span aria-hidden="true" className="text-violet-700">*</span>
+                  Mensaje <span aria-hidden="true" className="text-primary">*</span>
                 </label>
                 <textarea
                   id="contact-message"
@@ -151,12 +160,9 @@ function Contact() {
             </div>
 
             <div className="mt-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-              <button
-                type="submit"
-                className="inline-flex min-h-11 items-center justify-center rounded-lg bg-violet-700 px-6 py-3 font-semibold text-white transition-colors hover:bg-violet-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-700 focus-visible:ring-offset-2"
-              >
-                Validar formulario
-              </button>
+              <Button type="submit" className="px-6 py-3">
+                Enviar mensaje
+              </Button>
               {statusMessage && (
                 <p
                   role={Object.keys(errors).length > 0 ? 'alert' : 'status'}

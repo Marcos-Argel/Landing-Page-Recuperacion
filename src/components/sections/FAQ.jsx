@@ -3,24 +3,24 @@ import SectionTitle from '../ui/SectionTitle.jsx'
 
 const questions = [
   {
-    question: '¿Qué servicios presenta esta landing page?',
+    question: '¿Qué servicios ofrecen?',
     answer:
-      'La página reúne la información del proyecto, sus servicios, el portafolio, el equipo y las formas de contacto.',
+      'Diseño y desarrollo de páginas web, tiendas en línea y aplicaciones a la medida. Revisa la sección Servicios para ver el detalle.',
   },
   {
     question: '¿Cómo puedo iniciar una conversación con el equipo?',
     answer:
-      'Puedes completar el formulario de contacto. Mientras no se conecte un servicio de envío, el formulario solo valida los datos y no los transmite.',
+      'Completa el formulario de contacto o escríbenos por WhatsApp con el botón verde de la esquina.',
   },
   {
     question: '¿Puedo consultar por WhatsApp?',
     answer:
-      'Sí. El botón flotante abrirá un chat cuando se configure el número de WhatsApp del equipo en el componente correspondiente.',
+      'Sí. El botón flotante de la esquina abre un chat directo con el equipo.',
   },
   {
-    question: '¿Cómo se pueden actualizar los integrantes?',
+    question: '¿Cuánto cuesta un proyecto?',
     answer:
-      'Los nombres, roles, descripciones e imágenes están organizados en un arreglo dentro de la sección Equipo.',
+      'Depende del alcance. En la sección Precios tienes tres planes de referencia y para proyectos especiales hacemos una cotización a la medida.',
   },
 ]
 
@@ -32,7 +32,7 @@ function FAQ() {
       <div className="mx-auto max-w-3xl px-4">
         <SectionTitle
           title="Preguntas frecuentes"
-          subtitle="Resolvemos algunas dudas sobre el proyecto y las formas de contacto."
+          subtitle="Resolvemos las dudas más comunes antes de empezar."
         />
 
         <div className="divide-y divide-gray-200 rounded-2xl border border-gray-200 bg-white px-5 shadow-sm sm:px-7">
