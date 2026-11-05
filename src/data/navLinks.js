@@ -6,6 +6,7 @@ const navLinks = [
   { id: 'proceso', label: 'Proceso' },
   { id: 'precios', label: 'Precios' },
   { id: 'equipo', label: 'Equipo' },
+  { id: 'faq', label: 'Preguntas frecuentes' },
   { id: 'contacto', label: 'Contacto' },
 ]
 
